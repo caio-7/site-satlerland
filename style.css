@@ -1,0 +1,215 @@
+/* --- CONFIGURAÇÕES GERAIS E CORES --- */
+:root {
+    --cor-azul-escuro: #003366; /* Azul base */
+    --cor-azul-claro: #e6f0ff;  /* Fundo suave */
+    --cor-verde: #28a745;       /* Botões de Ação */
+    --cor-verde-hover: #218838; /* Verde mais escuro para o mouse */
+    --cor-texto: #333;
+    --cor-branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+header {
+    background-color: var(--cor-branco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo h1 {
+    color: var(--cor-azul-escuro);
+    font-size: 1.5rem;
+}
+
+/* CONTROLE DO TAMANHO DO LOGO */
+.img-logo {
+    max-height: 100px; /* Define que a altura máxima é 60 pixels */
+    width: auto;      /* A largura se ajusta sozinha para não distorcer a imagem */
+    display: block;   /* Remove uns espacinhos chatos que imagens tem embaixo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-azul-escuro);
+    font-weight: bold;
+}
+
+.btn-menu {
+    border: 2px solid var(--cor-azul-escuro);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-menu:hover {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-branco);
+}
+
+/* --- HERO SECTION (Topo) --- */
+.hero {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-branco);
+    height: 80vh; /* Altura de 80% da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px; /* Compensar o menu fixo */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* --- BOTÕES --- */
+.btn-destaque {
+    background-color: var(--cor-verde);
+    color: var(--cor-branco);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn-destaque:hover {
+    background-color: var(--cor-verde-hover);
+}
+
+/* --- SEÇÕES --- */
+.section-padrao {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--cor-branco);
+}
+
+.section-azul {
+    padding: 60px 0;
+    background-color: var(--cor-azul-claro);
+    text-align: center;
+}
+
+h2 {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 30px;
+}
+
+/* --- GRID DE CARDS --- */
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--cor-branco);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* --- FORMULÁRIO --- */
+.form-contato {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contato label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-contato input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+/* BOTÃO WHATSAPP FLUTUANTE */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Cor oficial do Zap */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 2000; /* Para ficar em cima de tudo */
+    transition: transform 0.3s;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+    background-color: #20ba5a;
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
