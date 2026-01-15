@@ -50,7 +50,7 @@ header {
 
 /* CONTROLE DO TAMANHO DO LOGO */
 .img-logo {
-    max-height: 100px; /* Define que a altura máxima é 60 pixels */
+    max-height: 70px; /* Define que a altura máxima é 60 pixels */
     width: auto;      /* A largura se ajusta sozinha para não distorcer a imagem */
     display: block;   /* Remove uns espacinhos chatos que imagens tem embaixo */
 }
@@ -94,6 +94,75 @@ nav a {
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+}
+
+/* --- LAYOUT FLEXBOX (Lado a Lado) --- */
+.flex-layout {
+    display: flex; /* Ativa o modo flexível */
+    justify-content: space-between; /* Um na esquerda, outro na direita */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 40px; /* Espaço entre o texto e o card */
+    padding: 20px 0;
+}
+
+/* Lado do Texto */
+.texto-lateral {
+    flex: 1; /* Ocupa metade do espaço disponível */
+    text-align: left; /* Alinha texto à esquerda */
+    color: var(--cor-azul-escuro); /* Garante leitura se o fundo for claro */
+}
+
+/* --- O CARD FLUTUANTE --- */
+.card-formulario {
+    flex: 1; /* Ocupa a outra metade */
+    background-color: var(--cor-branco);
+    padding: 30px; /* Espaço interno do card */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* A sombra que dá o efeito de elevação */
+    max-width: 450px; /* Para não ficar esticado demais em telas grandes */
+    margin-top: 40px;
+}
+
+.card-formulario h3 {
+    text-align: center;
+    color: var(--cor-azul-escuro);
+    margin-bottom: 20px;
+}
+
+/* Estilizando os Inputs dentro do Card */
+.card-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+.card-formulario input, 
+.card-formulario select {
+    width: 100%; /* Ocupa toda largura do card */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* --- RESPONSIVIDADE (Para Celular) --- */
+/* Quando a tela for menor que 768px (Tablets e Celulares) */
+@media (max-width: 768px) {
+    .flex-layout {
+        flex-direction: column; /* Empilha um embaixo do outro */
+    }
+    
+    .texto-lateral {
+        text-align: center; /* Centraliza texto no mobile */
+        margin-bottom: 20px;
+    }
+    
+    .card-formulario {
+        width: 100%; /* Card ocupa largura total no celular */
+    }
 }
 
 /* --- BOTÕES --- */
