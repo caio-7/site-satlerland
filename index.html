@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satlerland - Aprenda Inglês</title>
-    
+
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
 
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="img/satlerland-logo01.jpg" alt="Logo Satlerland" class="img-logo"> 
+                <img src="img/satlerland-logo01-semfundo.png" alt="Logo Satlerland" class="img-logo">
             </div>
-            <nav>
+
+            <div class="mobile-menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav class="nav-menu">
                 <ul>
-                    <li><a href="#contato-card">Início</a></li> <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li> <li><a href="#contato" class="btn-menu">Fale Conosco</a></li>
+                    <li><a href="#contato-card" onclick="toggleMenu()">Início</a></li>
+                    <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+                    <li><a href="#metodologia" onclick="toggleMenu()">Metodologia</a></li>
+                    <li><a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a></li>
+                    <li><a href="#contato" class="btn-menu" onclick="toggleMenu()">Fale Conosco</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="contato-card" class="section-azul" style="margin-top: 60px;"> <div class="container">
-        
-        <div class="flex-layout">
-            
+    <section id="contato-card" class="section-azul" style="margin-top: 60px;">
+        <div class="container">
+
+            <div class="flex-layout">
+
+
+                <!--
             <div class="texto-lateral">
                 <h2>Fale com a gente</h2>
                 <p>Não perca a oportunidade de aprender inglês com quem entende do assunto.</p>
@@ -44,29 +58,50 @@
                     <p><strong>Tel:</strong> (19) 99999-9999</p>
                 </div>
             </div>
+        -->
 
-            <div class="card-formulario">
-                <h3>Garanta sua vaga</h3>
-                <form action="https://formspree.io/f/SEU_CODIGO" method="POST">
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome" placeholder="Digite seu nome" required>
+                <div class="texto-lateral">
+                    <h1>Destrave seu Inglês em <span style="color:var(--cor-verde-destaque)">6 meses</span></h1>
 
-                    <label>WhatsApp</label>
-                    <input type="tel" name="whatsapp" placeholder="(19) 9..." required>
-                    
-                    <label>Qual seu nível?</label>
-                    <select name="nivel">
-                        <option value="iniciante">Básico / Iniciante</option>
-                        <option value="intermediario">Intermediário</option>
-                        <option value="avancado">Avançado</option>
-                    </select>
+                    <p class="subtitulo-hero">
+                        Método exclusivo focado em conversação para adultos que precisam crescer na carreira. Sem travas
+                        e sem enrolação.
+                    </p>
 
-                    <button type="submit" class="btn-destaque">Enviar Agora</button>
-                </form>
+                    <ul class="lista-vantagens">
+                        <li>✅ Aulas 100% online ou presenciais</li>
+                        <li>✅ Material didático próprio incluso</li>
+                        <li>✅ Foco na sua área de atuação</li>
+                    </ul>
+
+                </div>
+
+                <div class="card-formulario">
+                    <h3>Garanta sua vaga</h3>
+                    <form action="https://formspree.io/f/SEU_CODIGO" method="POST">
+                        <label>Nome Completo</label>
+                        <input type="text" name="nome" placeholder="Digite seu nome" required>
+
+                        <label>WhatsApp</label>
+                        <input type="tel" name="whatsapp" placeholder="(19) 9..." required>
+
+                        <label>Qual seu nível?</label>
+                        <select name="nivel">
+                            <option value="iniciante">Básico / Iniciante</option>
+                            <option value="intermediario">Intermediário</option>
+                            <option value="avancado">Avançado</option>
+                        </select>
+
+                        <button type="submit" class="btn-destaque">Enviar Agora</button>
+                    </form>
+                </div>
+
             </div>
-
-        </div> </div>
+        </div>
     </section>
+
+
+    <!-- //testando modelos de section
 
     <section id="sobre" class="section-padrao">
         <div class="container">
@@ -74,6 +109,35 @@
             <p>Somos focados em destravar a sua fala. Diferente das escolas tradicionais, aqui você fala desde o primeiro dia.</p>
             <br>
             <p><i>(logotipo Satlerland aqui)</i></p>
+        </div>
+    </section>
+    -->
+
+    <section id="sobre" class="section-padrao">
+        <div class="container">
+            <div class="flex-layout sobre-layout">
+                <div class="sobre-texto">
+                    <h2>Conheça o Teacher Pedro</h2>
+                    <p>
+                        Com mais de <strong>X anos de experiência</strong>, Pedro Satler já ajudou mais de
+                        <strong>Y alunos</strong> a perderem o medo de falar inglês.
+                    </p>
+                    <br>
+                    <p>
+                        Formado em [Formação Dele], desenvolveu um método prático que foge
+                        da gramática chata das escolas tradicionais. Seu objetivo é fazer você
+                        falar desde a primeira aula.
+                    </p>
+
+                    <a href="#contato" class="btn-destaque" style="margin-top: 20px;">Quero conhecer o método</a>
+                </div>
+
+                <div class="sobre-foto">
+                    <img src="https://ui-avatars.com/api/?name=Pedro+Satler&size=400" alt="Foto do Professor Pedro"
+                        class="foto-redonda-borda">
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -100,35 +164,41 @@
     <section id="depoimentos">
         <div class="container">
             <h2>O que dizem nossos alunos</h2>
-            
+
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    
+
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="https://ui-avatars.com/api/?name=Maria+Silva&background=003366&color=fff" alt="Aluno" class="client-photo">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Silva&background=003366&color=fff"
+                                alt="Aluno" class="client-photo">
                             <div class="quote-icon">❝</div>
-                            <p class="client-text">"O método do Teacher Pedro é sensacional. Finalmente perdi o medo de falar inglês em reuniões!"</p>
+                            <p class="client-text">"O método do Teacher Pedro é sensacional. Finalmente perdi o medo de
+                                falar inglês em reuniões!"</p>
                             <h4 class="client-name">Maria Silva</h4>
                             <span class="client-role">Gerente de Projetos</span>
                         </div>
                     </div>
-    
+
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="https://ui-avatars.com/api/?name=Joao+Costa&background=28a745&color=fff" alt="Aluno" class="client-photo">
+                            <img src="https://ui-avatars.com/api/?name=Joao+Costa&background=28a745&color=fff"
+                                alt="Aluno" class="client-photo">
                             <div class="quote-icon">❝</div>
-                            <p class="client-text">"As aulas são muito dinâmicas. Aprendi mais em 3 meses aqui do que em 2 anos na escola tradicional."</p>
+                            <p class="client-text">"As aulas são muito dinâmicas. Aprendi mais em 3 meses aqui do que em
+                                2 anos na escola tradicional."</p>
                             <h4 class="client-name">João Costa</h4>
                             <span class="client-role">Dev FullStack</span>
                         </div>
                     </div>
-    
+
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="https://ui-avatars.com/api/?name=Ana+Beatriz&background=random" alt="Aluno" class="client-photo">
+                            <img src="https://ui-avatars.com/api/?name=Ana+Beatriz&background=random" alt="Aluno"
+                                class="client-photo">
                             <div class="quote-icon">❝</div>
-                            <p class="client-text">"O ambiente é super acolhedor e o material didático é direto ao ponto. Recomendo demais!"</p>
+                            <p class="client-text">"O ambiente é super acolhedor e o material didático é direto ao
+                                ponto. Recomendo demais!"</p>
                             <h4 class="client-name">Ana Beatriz</h4>
                             <span class="client-role">Estudante</span>
                         </div>
@@ -136,26 +206,54 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="https://ui-avatars.com/api/?name=Carlos+Edu&background=random" alt="Aluno" class="client-photo">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+Edu&background=random" alt="Aluno"
+                                class="client-photo">
                             <div class="quote-icon">❝</div>
-                            <p class="client-text">"Excelente investimento. O foco em conversação fez toda a diferença para minha viagem."</p>
+                            <p class="client-text">"Excelente investimento. O foco em conversação fez toda a diferença
+                                para minha viagem."</p>
                             <h4 class="client-name">Carlos Eduardo</h4>
                             <span class="client-role">Engenheiro</span>
                         </div>
                     </div>
-    
+
                 </div>
-                
+
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
+    <section id="faq" class="section-padrao" style="background-color: var(--cor-fundo-suave);">
+    <div class="container">
+        <h2>Dúvidas Frequentes</h2>
+        
+        <div class="faq-grid">
+            
+            <details class="faq-item">
+                <summary>Quanto tempo dura o curso?</summary>
+                <p>Depende do seu ritmo e objetivo! Temos planos intensivos de 6 meses e extensivos de 1 ano. O foco é você falar o mais rápido possível.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>As aulas são online ou presenciais?</summary>
+                <p>Ambos! Você pode estudar no conforto de casa via Google Meet ou vir até nossa escola em [Cidade].</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Serve para iniciantes (nível zero)?</summary>
+                <p>Com certeza! Temos uma metodologia específica para quem nunca estudou inglês antes. Começamos do básico absoluto.</p>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+
     <section id="contato" class="section-padrao">
         <div class="container">
             <h2>Entre em Contato</h2>
             <p>Preencha abaixo para saber valores e horários.</p>
-            
+
             <form class="form-contato">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -168,6 +266,9 @@
         </div>
     </section>
 
+    
+
+
     <footer>
         <div class="container">
             <p>&copy; 2026 Satlerland. Todos os direitos reservados.</p>
@@ -175,12 +276,12 @@
     </footer>
 
 
-    <a href="https://wa.me/5519999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20aulas." 
-        class="btn-whatsapp" 
-        target="_blank"
-        title="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5519999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20aulas."
+        class="btn-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
         <svg viewBox="0 0 32 32" class="whatsapp-icon">
-        <path d="M16 2C8.269 2 2 8.269 2 16c0 2.533.676 4.966 1.959 7.189L2.346 29.5l6.452-1.693C10.896 28.98 13.385 29.615 16 29.615c7.731 0 14-6.269 14-14S23.731 2 16 2zm0 25.538c-2.315 0-4.524-.6-6.496-1.742l-.466-.27-3.824 1.004 1.02-3.73-.289-.46C4.852 20.308 4.231 18.204 4.231 16c0-6.488 5.281-11.769 11.769-11.769s11.769 5.281 11.769 11.769-5.281 11.769-11.769 11.769zm6.439-8.816c-.353-.177-2.088-1.029-2.411-1.147-.324-.118-.559-.176-.794.177-.235.353-.912 1.147-1.118 1.382-.206.235-.412.265-.765.088-1.554-.775-2.91-1.625-4.058-3.673-.147-.265.147-.245.422-.794.088-.176.044-.324-.022-.456-.066-.132-.588-1.412-.809-1.926-.213-.5-.434-.434-.596-.441-.154-.007-.331-.007-.507-.007-.176 0-.463.066-.706.331-.243.265-.926.904-.926 2.206s.949 2.559 1.081 2.735c.132.176 1.868 2.853 4.525 4l2.563.961c.642.179 1.258.17 1.745.097.544-.081 2.088-.853 2.382-1.676.294-.824.294-1.529.206-1.676-.088-.147-.324-.235-.676-.412z" fill="#FFF"/>
+            <path
+                d="M16 2C8.269 2 2 8.269 2 16c0 2.533.676 4.966 1.959 7.189L2.346 29.5l6.452-1.693C10.896 28.98 13.385 29.615 16 29.615c7.731 0 14-6.269 14-14S23.731 2 16 2zm0 25.538c-2.315 0-4.524-.6-6.496-1.742l-.466-.27-3.824 1.004 1.02-3.73-.289-.46C4.852 20.308 4.231 18.204 4.231 16c0-6.488 5.281-11.769 11.769-11.769s11.769 5.281 11.769 11.769-5.281 11.769-11.769 11.769zm6.439-8.816c-.353-.177-2.088-1.029-2.411-1.147-.324-.118-.559-.176-.794.177-.235.353-.912 1.147-1.118 1.382-.206.235-.412.265-.765.088-1.554-.775-2.91-1.625-4.058-3.673-.147-.265.147-.245.422-.794.088-.176.044-.324-.022-.456-.066-.132-.588-1.412-.809-1.926-.213-.5-.434-.434-.596-.441-.154-.007-.331-.007-.507-.007-.176 0-.463.066-.706.331-.243.265-.926.904-.926 2.206s.949 2.559 1.081 2.735c.132.176 1.868 2.853 4.525 4l2.563.961c.642.179 1.258.17 1.745.097.544-.081 2.088-.853 2.382-1.676.294-.824.294-1.529.206-1.676-.088-.147-.324-.235-.676-.412z"
+                fill="#FFF" />
         </svg>
     </a>
 
@@ -189,11 +290,11 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1, // Celular (padrão)
-            spaceBetween: 30, 
-            loop: true,       
+            spaceBetween: 30,
+            loop: true,
             autoplay: {
                 delay: 4000,
-                disableOnInteraction: false, 
+                disableOnInteraction: false,
             },
             pagination: {
                 el: ".swiper-pagination",
@@ -210,5 +311,15 @@
             },
         });
     </script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            const icon = document.querySelector('.mobile-menu-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
 </body>
+
 </html>

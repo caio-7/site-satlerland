@@ -1,9 +1,13 @@
 /* --- CONFIGURAÇÕES GERAIS E CORES --- */
 :root {
-    --cor-azul-escuro: #003366; /* Azul base */
-    --cor-azul-claro: #e6f0ff;  /* Fundo suave */
-    --cor-verde: #28a745;       /* Botões de Ação */
-    --cor-verde-hover: #218838; /* Verde mais escuro para o mouse */
+    --cor-azul-escuro: #003366;
+    /* Azul base */
+    --cor-azul-claro: #e6f0ff;
+    /* Fundo suave */
+    --cor-verde: #28a745;
+    /* Botões de Ação */
+    --cor-verde-hover: #218838;
+    /* Verde mais escuro para o mouse */
     --cor-texto: #333;
     --cor-branco: #ffffff;
 }
@@ -29,7 +33,7 @@ body {
 /* --- CABEÇALHO --- */
 header {
     background-color: var(--cor-branco);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -50,9 +54,12 @@ header {
 
 /* CONTROLE DO TAMANHO DO LOGO */
 .img-logo {
-    max-height: 60px; /* Define que a altura máxima é 60 pixels */
-    width: auto;      /* A largura se ajusta sozinha para não distorcer a imagem */
-    display: block;   /* Remove uns espacinhos chatos que imagens tem embaixo */
+    max-height: 80px;
+    /* Define que a altura máxima é 60 pixels */
+    width: auto;
+    /* A largura se ajusta sozinha para não distorcer a imagem */
+    display: block;
+    /* Remove uns espacinhos chatos que imagens tem embaixo */
 }
 
 nav ul {
@@ -83,12 +90,14 @@ nav a {
 .hero {
     background-color: var(--cor-azul-escuro);
     color: var(--cor-branco);
-    height: 80vh; /* Altura de 80% da tela */
+    height: 80vh;
+    /* Altura de 80% da tela */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 60px; /* Compensar o menu fixo */
+    margin-top: 60px;
+    /* Compensar o menu fixo */
 }
 
 .hero h2 {
@@ -96,30 +105,57 @@ nav a {
     margin-bottom: 20px;
 }
 
+.lista-vantagens {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.lista-vantagens li {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.subtitulo-hero {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
 /* --- LAYOUT FLEXBOX (Lado a Lado) --- */
 .flex-layout {
-    display: flex; /* Ativa o modo flexível */
-    justify-content: space-between; /* Um na esquerda, outro na direita */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 40px; /* Espaço entre o texto e o card */
+    display: flex;
+    /* Ativa o modo flexível */
+    justify-content: space-between;
+    /* Um na esquerda, outro na direita */
+    align-items: center;
+    /* Centraliza verticalmente */
+    gap: 40px;
+    /* Espaço entre o texto e o card */
     padding: 20px 0;
 }
 
 /* Lado do Texto */
 .texto-lateral {
-    flex: 1; /* Ocupa metade do espaço disponível */
-    text-align: left; /* Alinha texto à esquerda */
-    color: var(--cor-azul-escuro); /* Garante leitura se o fundo for claro */
+    flex: 1;
+    /* Ocupa metade do espaço disponível */
+    text-align: left;
+    /* Alinha texto à esquerda */
+    color: var(--cor-azul-escuro);
+    /* Garante leitura se o fundo for claro */
 }
 
 /* --- O CARD FLUTUANTE --- */
 .card-formulario {
-    flex: 1; /* Ocupa a outra metade */
+    flex: 1;
+    /* Ocupa a outra metade */
     background-color: var(--cor-branco);
-    padding: 30px; /* Espaço interno do card */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* A sombra que dá o efeito de elevação */
-    max-width: 450px; /* Para não ficar esticado demais em telas grandes */
+    padding: 30px;
+    /* Espaço interno do card */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* A sombra que dá o efeito de elevação */
+    max-width: 450px;
+    /* Para não ficar esticado demais em telas grandes */
     margin-top: 40px;
 }
 
@@ -138,9 +174,10 @@ nav a {
     text-align: left;
 }
 
-.card-formulario input, 
+.card-formulario input,
 .card-formulario select {
-    width: 100%; /* Ocupa toda largura do card */
+    width: 100%;
+    /* Ocupa toda largura do card */
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -152,16 +189,19 @@ nav a {
 /* Quando a tela for menor que 768px (Tablets e Celulares) */
 @media (max-width: 768px) {
     .flex-layout {
-        flex-direction: column; /* Empilha um embaixo do outro */
+        flex-direction: column;
+        /* Empilha um embaixo do outro */
     }
-    
+
     .texto-lateral {
-        text-align: center; /* Centraliza texto no mobile */
+        text-align: center;
+        /* Centraliza texto no mobile */
         margin-bottom: 20px;
     }
-    
+
     .card-formulario {
-        width: 100%; /* Card ocupa largura total no celular */
+        width: 100%;
+        /* Card ocupa largura total no celular */
     }
 }
 
@@ -203,6 +243,30 @@ h2 {
     margin-bottom: 30px;
 }
 
+.sobre-layout {
+    align-items: center;
+    text-align: left;
+    gap: 50px;
+}
+
+.foto-redonda-borda {
+    border-radius: 20px;
+    /* Bordas arredondadas modernas */
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 10px 10px 0px var(--cor-azul-escuro);
+    /* Efeito de design chique */
+}
+
+/* No celular, inverter a ordem para a foto aparecer antes ou depois se quiser */
+@media (max-width: 768px) {
+    .sobre-layout {
+        flex-direction: column-reverse;
+    }
+
+    /* Foto em cima, texto embaixo */
+}
+
 /* --- GRID DE CARDS --- */
 .cards-grid {
     display: flex;
@@ -216,7 +280,7 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
@@ -246,6 +310,44 @@ h2 {
 }
 
 /* --- RODAPÉ --- */
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.faq-item summary {
+    font-weight: bold;
+    color: var(--cor-azul-escuro);
+    list-style: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    float: right;
+    font-weight: bold;
+}
+
+.faq-item[open] summary::after {
+    content: '-';
+}
+
+/* Muda para menos quando aberto */
+.faq-item p {
+    margin-top: 10px;
+    color: #555;
+}
+
 footer {
     background-color: var(--cor-azul-escuro);
     color: var(--cor-branco);
@@ -259,7 +361,8 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25d366; /* Cor oficial do Zap */
+    background-color: #25d366;
+    /* Cor oficial do Zap */
     color: white;
     width: 60px;
     height: 60px;
@@ -267,13 +370,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 2000; /* Para ficar em cima de tudo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    /* Para ficar em cima de tudo */
     transition: transform 0.3s;
 }
 
 .btn-whatsapp:hover {
-    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+    transform: scale(1.1);
+    /* Aumenta um pouco ao passar o mouse */
     background-color: #20ba5a;
 }
 
@@ -290,7 +395,8 @@ footer {
 
 #depoimentos {
     padding: 80px 20px;
-    background-color: #f8f9fa; /* Um cinza bem clarinho para diferenciar */
+    background-color: #f8f9fa;
+    /* Um cinza bem clarinho para diferenciar */
     text-align: center;
 }
 
@@ -299,10 +405,12 @@ footer {
     background: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra leve */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    /* Sombra leve */
     text-align: center;
-    height: auto; 
-    min-height: 320px; /* Altura mínima para ficarem alinhados */
+    height: auto;
+    min-height: 320px;
+    /* Altura mínima para ficarem alinhados */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,7 +419,8 @@ footer {
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px); /* Efeito de "pulo" ao passar o mouse */
+    transform: translateY(-5px);
+    /* Efeito de "pulo" ao passar o mouse */
 }
 
 /* Foto do Aluno */
@@ -321,7 +430,8 @@ footer {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid var(--cor-azul-escuro); /* Usando sua variável de cor */
+    border: 3px solid var(--cor-azul-escuro);
+    /* Usando sua variável de cor */
 }
 
 /* Aspas decorativas */
@@ -337,7 +447,8 @@ footer {
     color: #555;
     margin-bottom: 20px;
     font-size: 0.95rem;
-    flex-grow: 1; /* Empurra o nome para baixo */
+    flex-grow: 1;
+    /* Empurra o nome para baixo */
 }
 
 .client-name {
@@ -354,7 +465,8 @@ footer {
 /* Ajustes visuais do Swiper */
 .swiper {
     width: 100%;
-    padding-bottom: 50px !important; /* Espaço para as bolinhas de paginação */
+    padding-bottom: 50px !important;
+    /* Espaço para as bolinhas de paginação */
 }
 
 .swiper-pagination-bullet-active {
@@ -363,5 +475,81 @@ footer {
 
 /* CORREÇÃO DO MENU COBRINDO O TÍTULO */
 section {
-    scroll-margin-top: 100px; /* Empurra o ponto de ancoragem para baixo */
+    scroll-margin-top: 100px;
+    /* Empurra o ponto de ancoragem para baixo */
+}
+
+
+/* --- CORREÇÃO DO LOGO --- */
+.logo img {
+    max-height: 60px;
+    /* Trava a altura para não estourar */
+    width: auto;
+    display: block;
+}
+
+/* --- MENU MOBILE (HAMBÚRGUER) --- */
+.mobile-menu-icon {
+    display: none;
+    /* Esconde no PC */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mobile-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-azul-escuro);
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+/* SÓ PARA CELULAR (Telas menores que 768px) */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: flex;
+        /* Mostra o ícone */
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        /* Altura do cabeçalho */
+        right: -100%;
+        /* Começa escondido */
+        background-color: #fff;
+        /* Fundo branco */
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.4s;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .nav-menu.open {
+        right: 0;
+        /* Aparece na tela */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Animação do X no ícone */
+    .mobile-menu-icon.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-icon.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-icon.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
 }
