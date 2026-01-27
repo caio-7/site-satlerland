@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -20,17 +22,15 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato-card">Início</a></li> <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#contato" class="btn-menu">Fale Conosco</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li> <li><a href="#contato" class="btn-menu">Fale Conosco</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="contato-card" class="section-azul">
-    <div class="container">
+    <section id="contato-card" class="section-azul" style="margin-top: 60px;"> <div class="container">
         
         <div class="flex-layout">
             
@@ -66,7 +66,7 @@
             </div>
 
         </div> </div>
-</section>
+    </section>
 
     <section id="sobre" class="section-padrao">
         <div class="container">
@@ -97,6 +97,60 @@
         </div>
     </section>
 
+    <section id="depoimentos">
+        <div class="container">
+            <h2>O que dizem nossos alunos</h2>
+            
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Silva&background=003366&color=fff" alt="Aluno" class="client-photo">
+                            <div class="quote-icon">❝</div>
+                            <p class="client-text">"O método do Teacher Pedro é sensacional. Finalmente perdi o medo de falar inglês em reuniões!"</p>
+                            <h4 class="client-name">Maria Silva</h4>
+                            <span class="client-role">Gerente de Projetos</span>
+                        </div>
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="https://ui-avatars.com/api/?name=Joao+Costa&background=28a745&color=fff" alt="Aluno" class="client-photo">
+                            <div class="quote-icon">❝</div>
+                            <p class="client-text">"As aulas são muito dinâmicas. Aprendi mais em 3 meses aqui do que em 2 anos na escola tradicional."</p>
+                            <h4 class="client-name">João Costa</h4>
+                            <span class="client-role">Dev FullStack</span>
+                        </div>
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="https://ui-avatars.com/api/?name=Ana+Beatriz&background=random" alt="Aluno" class="client-photo">
+                            <div class="quote-icon">❝</div>
+                            <p class="client-text">"O ambiente é super acolhedor e o material didático é direto ao ponto. Recomendo demais!"</p>
+                            <h4 class="client-name">Ana Beatriz</h4>
+                            <span class="client-role">Estudante</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+Edu&background=random" alt="Aluno" class="client-photo">
+                            <div class="quote-icon">❝</div>
+                            <p class="client-text">"Excelente investimento. O foco em conversação fez toda a diferença para minha viagem."</p>
+                            <h4 class="client-name">Carlos Eduardo</h4>
+                            <span class="client-role">Engenheiro</span>
+                        </div>
+                    </div>
+    
+                </div>
+                
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <section id="contato" class="section-padrao">
         <div class="container">
             <h2>Entre em Contato</h2>
@@ -121,17 +175,40 @@
     </footer>
 
 
-
-
-   <a href="https://wa.me/5519999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20aulas." 
+    <a href="https://wa.me/5519999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20aulas." 
         class="btn-whatsapp" 
         target="_blank"
         title="Fale conosco no WhatsApp">
         <svg viewBox="0 0 32 32" class="whatsapp-icon">
         <path d="M16 2C8.269 2 2 8.269 2 16c0 2.533.676 4.966 1.959 7.189L2.346 29.5l6.452-1.693C10.896 28.98 13.385 29.615 16 29.615c7.731 0 14-6.269 14-14S23.731 2 16 2zm0 25.538c-2.315 0-4.524-.6-6.496-1.742l-.466-.27-3.824 1.004 1.02-3.73-.289-.46C4.852 20.308 4.231 18.204 4.231 16c0-6.488 5.281-11.769 11.769-11.769s11.769 5.281 11.769 11.769-5.281 11.769-11.769 11.769zm6.439-8.816c-.353-.177-2.088-1.029-2.411-1.147-.324-.118-.559-.176-.794.177-.235.353-.912 1.147-1.118 1.382-.206.235-.412.265-.765.088-1.554-.775-2.91-1.625-4.058-3.673-.147-.265.147-.245.422-.794.088-.176.044-.324-.022-.456-.066-.132-.588-1.412-.809-1.926-.213-.5-.434-.434-.596-.441-.154-.007-.331-.007-.507-.007-.176 0-.463.066-.706.331-.243.265-.926.904-.926 2.206s.949 2.559 1.081 2.735c.132.176 1.868 2.853 4.525 4l2.563.961c.642.179 1.258.17 1.745.097.544-.081 2.088-.853 2.382-1.676.294-.824.294-1.529.206-1.676-.088-.147-.324-.235-.676-.412z" fill="#FFF"/>
         </svg>
-   </a>
+    </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1, // Celular (padrão)
+            spaceBetween: 30, 
+            loop: true,       
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false, 
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // Responsividade
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, // Tablet mostra 2
+                },
+                1024: {
+                    slidesPerView: 3, // PC mostra 3
+                },
+            },
+        });
+    </script>
 </body>
 </html>
