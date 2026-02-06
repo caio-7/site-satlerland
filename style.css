@@ -143,6 +143,11 @@ nav a {
     /* Garante leitura se o fundo for claro */
 }
 
+.h1-headline {
+    
+    
+}
+
 /* --- O CARD FLUTUANTE --- */
 .card-formulario {
     flex: 1;
