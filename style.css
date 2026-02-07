@@ -20,6 +20,7 @@
     --cor-texto: #333;
     --cor-branco: #ffffff;
     --cor-fundo-suave: #f8fafc;
+    --cor-fundo-principal: #f3f4f6; 
 }
 
 * {
@@ -36,6 +37,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--cor-texto);
     line-height: 1.6;
+    background-color: var(--cor-fundo-principal);
 }
 
 .container {
@@ -47,10 +49,10 @@ body {
 /* Utilitários */
 .margin-top-20 { margin-top: 20px; }
 .margin-top-30 { margin-top: 30px; }
-.bg-white { background-color: var(--cor-branco); }
+.bg-white { background-color: var(--cor-fundo-principal); }
 .bg-azul-claro { background-color: var(--cor-azul-tabela); }
 .bg-suave { background-color: var(--cor-fundo-suave); }
-.titulo-vermelho { color: var(--cor-vermelho); }
+.titulo-metodologia { color: var(--cor-azul-escuro); }
 .titulo-centralizado { text-align: center; margin-bottom: 40px; color: var(--cor-azul-escuro); }
 
 /* Correção do Menu Cobrindo o Título */
@@ -430,8 +432,8 @@ nav a:hover {
 
 .btn-destaque:hover { background-color: var(--cor-verde-hover); }
 
-.btn-vermelho { background-color: var(--cor-vermelho); }
-.btn-vermelho:hover { background-color: var(--cor-vermelho-hover); }
+.btn-vermelho { background-color: var(--cor-azul-escuro); }
+.btn-vermelho:hover { background-color: var(--cor-azul-primario); }
 
 /* =========================================
    RODAPÉ E FLUTUANTES
@@ -516,6 +518,16 @@ footer {
     
     .texto-lateral, .metodologia-texto, .sobre-texto {
         text-align: center;
+    }
+
+    .texto-lateral .lista-vantagens {
+        text-align: left;       /* O texto e ícones ficam alinhados à esquerda */
+        display: inline-block;  /* O bloco ocupa apenas o tamanho necessário */
+        margin: 0 auto;         /* Centraliza o bloco na tela */
+    }
+
+    .texto-lateral {
+        padding: 0 15px;
     }
 
     .card-formulario { width: 100%; }
