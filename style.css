@@ -1,21 +1,35 @@
-/* --- CONFIGURAÇÕES GERAIS E CORES --- */
+/* =========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================= */
 :root {
+    /* Cores Institucionais */
     --cor-azul-escuro: #003366;
-    /* Azul base */
+    --cor-azul-primario: #1e40af;
     --cor-azul-claro: #e6f0ff;
-    /* Fundo suave */
+    --cor-azul-tabela: #E3F2FD;
+    
+    /* Cores de Ação e Destaque */
     --cor-verde: #28a745;
-    /* Botões de Ação */
     --cor-verde-hover: #218838;
-    /* Verde mais escuro para o mouse */
+    --cor-verde-satlerland: #4CAF50;
+    --cor-vermelho: #D32F2F;
+    --cor-vermelho-hover: #B71C1C;
+    
+    /* Cores Neutras */
+    --cor-laranja-tradicional: #FF9800;
     --cor-texto: #333;
     --cor-branco: #ffffff;
+    --cor-fundo-suave: #f8fafc;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -30,7 +44,23 @@ body {
     padding: 0 20px;
 }
 
-/* --- CABEÇALHO --- */
+/* Utilitários */
+.margin-top-20 { margin-top: 20px; }
+.margin-top-30 { margin-top: 30px; }
+.bg-white { background-color: var(--cor-branco); }
+.bg-azul-claro { background-color: var(--cor-azul-tabela); }
+.bg-suave { background-color: var(--cor-fundo-suave); }
+.titulo-vermelho { color: var(--cor-vermelho); }
+.titulo-centralizado { text-align: center; margin-bottom: 40px; color: var(--cor-azul-escuro); }
+
+/* Correção do Menu Cobrindo o Título */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
 header {
     background-color: var(--cor-branco);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -44,22 +74,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 15px;
+    padding: 10px 20px;
 }
 
-.logo h1 {
-    color: var(--cor-azul-escuro);
-    font-size: 1.5rem;
-}
-
-/* CONTROLE DO TAMANHO DO LOGO */
-.img-logo {
-    max-height: 80px;
-    /* Define que a altura máxima é 60 pixels */
+.logo img {
+    max-height: 60px;
     width: auto;
-    /* A largura se ajusta sozinha para não distorcer a imagem */
     display: block;
-    /* Remove uns espacinhos chatos que imagens tem embaixo */
 }
 
 nav ul {
@@ -72,6 +93,11 @@ nav a {
     text-decoration: none;
     color: var(--cor-azul-escuro);
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-azul-primario);
 }
 
 .btn-menu {
@@ -83,26 +109,48 @@ nav a {
 
 .btn-menu:hover {
     background-color: var(--cor-azul-escuro);
-    color: var(--cor-branco);
+    color: var(--cor-branco) !important;
 }
 
-/* --- HERO SECTION (Topo) --- */
-.hero {
-    background-color: var(--cor-azul-escuro);
-    color: var(--cor-branco);
-    height: 80vh;
-    /* Altura de 80% da tela */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* =========================================
+   HERO SECTION (INÍCIO)
+   ========================================= */
+.hero-section {
+    padding-top: 120px; /* Espaço extra por causa do header fixo */
+    padding-bottom: 60px;
+}
+
+.section-azul {
+    background-color: var(--cor-azul-claro);
     text-align: center;
-    margin-top: 60px;
-    /* Compensar o menu fixo */
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.flex-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.texto-lateral {
+    flex: 1;
+    text-align: left;
+    color: var(--cor-azul-escuro);
+}
+
+.texto-lateral h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.h1-headline {
+    color: var(--cor-verde);
+}
+
+.subtitulo-hero {
+    font-size: 1.1rem;
+    color: #555;
 }
 
 .lista-vantagens {
@@ -115,53 +163,15 @@ nav a {
     font-weight: bold;
 }
 
-.subtitulo-hero {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* --- LAYOUT FLEXBOX (Lado a Lado) --- */
-.flex-layout {
-    display: flex;
-    /* Ativa o modo flexível */
-    justify-content: space-between;
-    /* Um na esquerda, outro na direita */
-    align-items: center;
-    /* Centraliza verticalmente */
-    gap: 40px;
-    /* Espaço entre o texto e o card */
-    padding: 20px 0;
-}
-
-/* Lado do Texto */
-.texto-lateral {
-    flex: 1;
-    /* Ocupa metade do espaço disponível */
-    text-align: left;
-    /* Alinha texto à esquerda */
-    color: var(--cor-azul-escuro);
-    /* Garante leitura se o fundo for claro */
-}
-
-.h1-headline {
-
-    
-}
-
-/* --- O CARD FLUTUANTE --- */
+/* Card Flutuante (Formulário) */
 .card-formulario {
     flex: 1;
-    /* Ocupa a outra metade */
     background-color: var(--cor-branco);
     padding: 30px;
-    /* Espaço interno do card */
     border-radius: 15px;
-    /* Bordas arredondadas */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    /* A sombra que dá o efeito de elevação */
     max-width: 450px;
-    /* Para não ficar esticado demais em telas grandes */
-    margin-top: 40px;
+    margin-top: 0; /* Ajustado na refatoração */
 }
 
 .card-formulario h3 {
@@ -170,7 +180,6 @@ nav a {
     margin-bottom: 20px;
 }
 
-/* Estilizando os Inputs dentro do Card */
 .card-formulario label {
     display: block;
     margin-bottom: 5px;
@@ -182,7 +191,6 @@ nav a {
 .card-formulario input,
 .card-formulario select {
     width: 100%;
-    /* Ocupa toda largura do card */
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -190,62 +198,13 @@ nav a {
     background-color: #f9f9f9;
 }
 
-/* --- RESPONSIVIDADE (Para Celular) --- */
-/* Quando a tela for menor que 768px (Tablets e Celulares) */
-@media (max-width: 768px) {
-    .flex-layout {
-        flex-direction: column;
-        /* Empilha um embaixo do outro */
-    }
-
-    .texto-lateral {
-        text-align: center;
-        /* Centraliza texto no mobile */
-        margin-bottom: 20px;
-    }
-
-    .card-formulario {
-        width: 100%;
-        /* Card ocupa largura total no celular */
-    }
-}
-
-/* --- BOTÕES --- */
-.btn-destaque {
-    background-color: var(--cor-verde);
-    color: var(--cor-branco);
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background 0.3s;
-}
-
-.btn-destaque:hover {
-    background-color: var(--cor-verde-hover);
-}
-
-/* --- SEÇÕES --- */
+/* =========================================
+   SEÇÃO SOBRE
+   ========================================= */
 .section-padrao {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
     background-color: var(--cor-branco);
-}
-
-.section-azul {
-    padding: 60px 0;
-    background-color: var(--cor-azul-claro);
-    text-align: center;
-}
-
-h2 {
-    color: var(--cor-azul-escuro);
-    margin-bottom: 30px;
 }
 
 .sobre-layout {
@@ -254,323 +213,28 @@ h2 {
     gap: 50px;
 }
 
+.sobre-texto h2 {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
 .foto-redonda-borda {
     border-radius: 20px;
-    /* Bordas arredondadas modernas */
     width: 100%;
     max-width: 400px;
     box-shadow: 10px 10px 0px var(--cor-azul-escuro);
-    /* Efeito de design chique */
-}
-
-/* No celular, inverter a ordem para a foto aparecer antes ou depois se quiser */
-@media (max-width: 768px) {
-    .sobre-layout {
-        flex-direction: column-reverse;
-    }
-
-    /* Foto em cima, texto embaixo */
-}
-
-/* --- GRID DE CARDS --- */
-.cards-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: var(--cor-branco);
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.card h3 {
-    color: var(--cor-azul-escuro);
-    margin-bottom: 10px;
-}
-
-/* --- FORMULÁRIO --- */
-.form-contato {
-    max-width: 500px;
+    display: block;
     margin: 0 auto;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
 }
-
-.form-contato label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-contato input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* --- RODAPÉ --- */
-
-.faq-grid {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.faq-item {
-    background: #fff;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    cursor: pointer;
-}
-
-.faq-item summary {
-    font-weight: bold;
-    color: var(--cor-azul-escuro);
-    list-style: none;
-}
-
-.faq-item summary::after {
-    content: '+';
-    float: right;
-    font-weight: bold;
-}
-
-.faq-item[open] summary::after {
-    content: '-';
-}
-
-/* Muda para menos quando aberto */
-.faq-item p {
-    margin-top: 10px;
-    color: #555;
-}
-
-footer {
-    background-color: var(--cor-azul-escuro);
-    color: var(--cor-branco);
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-}
-
-/* BOTÃO WHATSAPP FLUTUANTE */
-.btn-whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    /* Cor oficial do Zap */
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 2000;
-    /* Para ficar em cima de tudo */
-    transition: transform 0.3s;
-}
-
-.btn-whatsapp:hover {
-    transform: scale(1.1);
-    /* Aumenta um pouco ao passar o mouse */
-    background-color: #20ba5a;
-}
-
-.whatsapp-icon {
-    width: 35px;
-    height: 35px;
-    fill: white;
-}
-
 
 /* =========================================
-   NOVA SEÇÃO: CARROSSEL DE DEPOIMENTOS
+   METODOLOGIA DETALHADA
    ========================================= */
-
-#depoimentos {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
-    /* Um cinza bem clarinho para diferenciar */
-    text-align: center;
-}
-
-/* O Card do Aluno */
-.testimonial-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    /* Sombra leve */
-    text-align: center;
-    height: auto;
-    min-height: 320px;
-    /* Altura mínima para ficarem alinhados */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    /* Efeito de "pulo" ao passar o mouse */
-}
-
-/* Foto do Aluno */
-.client-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid var(--cor-azul-escuro);
-    /* Usando sua variável de cor */
-}
-
-/* Aspas decorativas */
-.quote-icon {
-    font-size: 40px;
-    color: #ddd;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.client-text {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    flex-grow: 1;
-    /* Empurra o nome para baixo */
-}
-
-.client-name {
-    font-weight: bold;
-    color: var(--cor-azul-escuro);
-    margin-bottom: 5px;
-}
-
-.client-role {
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* Ajustes visuais do Swiper */
-.swiper {
-    width: 100%;
-    padding-bottom: 50px !important;
-    /* Espaço para as bolinhas de paginação */
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--cor-azul-escuro) !important;
-}
-
-/* CORREÇÃO DO MENU COBRINDO O TÍTULO */
-section {
-    scroll-margin-top: 100px;
-    /* Empurra o ponto de ancoragem para baixo */
-}
-
-
-/* --- CORREÇÃO DO LOGO --- */
-.logo img {
-    max-height: 60px;
-    /* Trava a altura para não estourar */
-    width: auto;
-    display: block;
-}
-
-/* --- MENU MOBILE (HAMBÚRGUER) --- */
-.mobile-menu-icon {
-    display: none;
-    /* Esconde no PC */
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.mobile-menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--cor-azul-escuro);
-    border-radius: 2px;
-    transition: 0.4s;
-}
-
-/* SÓ PARA CELULAR (Telas menores que 768px) */
-@media (max-width: 768px) {
-    .mobile-menu-icon {
-        display: flex;
-        /* Mostra o ícone */
-        z-index: 1001;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        /* Altura do cabeçalho */
-        right: -100%;
-        /* Começa escondido */
-        background-color: #fff;
-        /* Fundo branco */
-        width: 100%;
-        height: auto;
-        padding: 20px 0;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        transition: 0.4s;
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .nav-menu.open {
-        right: 0;
-        /* Aparece na tela */
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    /* Animação do X no ícone */
-    .mobile-menu-icon.open .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .mobile-menu-icon.open .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-icon.open .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-}
-
-/* --- VARIÁVEIS DE COR PARA AS NOVAS SEÇÕES --- */
-:root {
-    --cor-vermelho: #D32F2F;
-    --cor-laranja-tradicional: #FF9800; /* Cor para a escola tradicional */
-    --cor-verde-satlerland: #4CAF50;   /* Cor para a Satlerland */
-    --cor-azul-claro-fundo: #E3F2FD;   /* Fundo da tabela */
-}
-
-/* --- SEÇÃO NOSSA METODOLOGIA --- */
 .metodologia-layout {
     align-items: center;
     gap: 50px;
+    text-align: left;
 }
 
 .metodologia-texto h2 {
@@ -583,39 +247,24 @@ section {
     margin-bottom: 15px;
     font-size: 1.1rem;
     color: #555;
-    line-height: 1.6;
-}
-
-.btn-vermelho {
-    background-color: var(--cor-vermelho);
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.btn-vermelho:hover {
-    background-color: #B71C1C; /* Vermelho mais escuro no hover */
 }
 
 .img-ilustracao {
     max-width: 100%;
     height: auto;
-    /* border-radius: 20px; Opcional: arredondar a imagem */
-    /* box-shadow: 0 10px 20px rgba(0,0,0,0.1); Opcional: sombra suave */
+    border-radius: 10px;
 }
 
-/* --- SEÇÃO TABELA COMPARATIVA --- */
+/* =========================================
+   TABELA COMPARATIVA
+   ========================================= */
 .tabela-container {
     max-width: 900px;
     margin: 0 auto 40px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Para arredondar os cantos da tabela */
+    overflow: hidden;
 }
 
 .tabela-comparativa {
@@ -637,119 +286,240 @@ section {
     letter-spacing: 1px;
 }
 
-.th-tradicional {
-    background-color: var(--cor-laranja-tradicional);
-    width: 50%; /* Divide a largura igualmente */
-}
+.th-tradicional { background-color: var(--cor-laranja-tradicional); width: 50%; }
+.th-satlerland { background-color: var(--cor-verde-satlerland); width: 50%; }
 
-.th-satlerland {
-    background-color: var(--cor-verde-satlerland);
-    width: 50%;
-}
+.tabela-comparativa td { border-bottom: 1px solid #eee; color: #555; }
+.td-tradicional { background-color: #FFF3E0; }
+.td-satlerland { background-color: #E8F5E9; }
 
-.tabela-comparativa td {
-    border-bottom: 1px solid #eee;
-    color: #555;
-}
+.sem-borda { border-bottom: none; }
 
-.td-tradicional {
-    background-color: #FFF3E0; /* Fundo laranja bem claro */
-}
-
-.td-satlerland {
-    background-color: #E8F5E9; /* Fundo verde bem claro */
-}
-
-.sem-borda {
-    border-bottom: none;
-}
-
-.icone-x {
-    color: var(--cor-laranja-tradicional);
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.icone-check {
-    color: var(--cor-verde-satlerland);
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
+.icone-x { color: var(--cor-laranja-tradicional); font-weight: bold; margin-right: 10px; font-size: 1.2rem; }
+.icone-check { color: var(--cor-verde-satlerland); font-weight: bold; margin-right: 10px; font-size: 1.2rem; }
 
 .rodape-tabela {
     text-align: center;
+    margin-top: 20px;
+}
+.logo-tabela {
+    max-height: 80px;
+    width: auto;
+}
+
+/* =========================================
+   CARDS E GRID
+   ========================================= */
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--cor-branco);
+    padding: 30px 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    color: var(--cor-azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   DEPOIMENTOS (SWIPER)
+   ========================================= */
+#depoimentos {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+#depoimentos h2 { color: var(--cor-azul-escuro); margin-bottom: 40px; }
+
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    height: auto;
+    min-height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
 }
 
-.logo-tabela {
-    max-height: 60px;
-    width: auto;
+.testimonial-card:hover { transform: translateY(-5px); }
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--cor-azul-escuro);
 }
 
-.btn-whatsapp-tabela {
-    background-color: var(--cor-verde-satlerland);
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px; /* Botão arredondado */
-    font-weight: bold;
+.quote-icon { font-size: 40px; color: #ddd; line-height: 1; margin-bottom: 10px; }
+.client-text { font-style: italic; color: #555; margin-bottom: 20px; font-size: 0.95rem; flex-grow: 1; }
+.client-name { font-weight: bold; color: var(--cor-azul-escuro); margin-bottom: 5px; }
+.client-role { font-size: 0.85rem; color: #888; }
+
+.swiper { width: 100%; padding-bottom: 50px !important; }
+.swiper-pagination-bullet-active { background-color: var(--cor-azul-escuro) !important; }
+
+/* =========================================
+   FAQ
+   ========================================= */
+.faq-grid {
+    max-width: 800px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.faq-item summary { font-weight: bold; color: var(--cor-azul-escuro); list-style: none; padding-right: 20px; position: relative; }
+.faq-item summary::after { content: '+'; position: absolute; right: 0; font-weight: bold; }
+.faq-item[open] summary::after { content: '-'; }
+.faq-item p { margin-top: 10px; color: #555; }
+
+/* =========================================
+   FORMULÁRIO DE CONTATO (FINAL)
+   ========================================= */
+.form-contato {
+    max-width: 500px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.form-contato label { margin-bottom: 5px; font-weight: bold; display: block; }
+.form-contato input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+
+/* =========================================
+   BOTÕES GERAIS
+   ========================================= */
+.btn-destaque {
+    background-color: var(--cor-verde);
+    color: var(--cor-branco);
+    padding: 15px 30px;
     text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-destaque:hover { background-color: var(--cor-verde-hover); }
+
+.btn-vermelho { background-color: var(--cor-vermelho); }
+.btn-vermelho:hover { background-color: var(--cor-vermelho-hover); }
+
+/* =========================================
+   RODAPÉ E FLUTUANTES
+   ========================================= */
+footer {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    transition: transform 0.3s;
 }
 
-.btn-whatsapp-tabela:hover {
-    background-color: #388E3C; /* Verde mais escuro */
-    transform: translateY(-3px); /* Efeito de levantar */
+.btn-whatsapp:hover { transform: scale(1.1); background-color: #20ba5a; }
+.whatsapp-icon { width: 35px; height: 35px; fill: white; }
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
 
-/* Ícone do WhatsApp no botão (usando um caractere unicode ou fonte de ícones) */
-.whatsapp-icon-tabela::before {
-    content: '\f232'; /* Código do ícone do WhatsApp (ex: Font Awesome) - Substitua se necessário */
-    font-family: 'Font Awesome 5 Brands'; /* Nome da fonte de ícones */
-    font-weight: 400;
-    font-size: 1.3rem;
+.mobile-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-azul-escuro);
+    border-radius: 2px;
+    transition: 0.4s;
 }
-/* Se não usar Font Awesome, pode usar um SVG inline ou um caractere simples como '📞' */
-/* .whatsapp-icon-tabela::before { content: '📞'; margin-right: 5px; } */
 
-
-/* --- RESPONSIVIDADE PARA AS NOVAS SEÇÕES --- */
 @media (max-width: 768px) {
-    .metodologia-layout {
-        flex-direction: column; /* Texto em cima, imagem embaixo */
+    /* Menu Mobile */
+    .mobile-menu-icon { display: flex; z-index: 1001; }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px; /* Ajuste conforme altura do header */
+        right: -100%;
+        background-color: #fff;
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.4s;
+        text-align: center;
+        flex-direction: column;
+    }
+    .nav-menu.open { right: 0; }
+    .nav-menu ul { flex-direction: column; gap: 20px; }
+
+    /* Ícone X */
+    .mobile-menu-icon.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .mobile-menu-icon.open .bar:nth-child(2) { opacity: 0; }
+    .mobile-menu-icon.open .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    /* Ajustes de Layout */
+    .flex-layout, .sobre-layout, .metodologia-layout {
+        flex-direction: column;
+    }
+
+    .sobre-layout { flex-direction: column-reverse; } /* Foto em cima no mobile */
+    
+    .texto-lateral, .metodologia-texto, .sobre-texto {
         text-align: center;
     }
 
-    .metodologia-texto {
-        margin-bottom: 30px;
-    }
-    
-    .tabela-comparativa th,
-    .tabela-comparativa td {
-        padding: 15px 10px; /* Menos padding em telas pequenas */
-        font-size: 1rem;
-    }
-    
-    .icone-x, .icone-check {
-        margin-right: 5px;
-        font-size: 1.1rem;
-    }
+    .card-formulario { width: 100%; }
 
-    .btn-whatsapp-tabela {
-        width: 100%; /* Botão ocupa a largura total no celular */
-        justify-content: center;
-    }
-}
-
-.logo-tabela {
-    max-height: 100px;
-    width: auto;
+    /* Ajuste Tabela */
+    .tabela-comparativa th, .tabela-comparativa td { padding: 15px 10px; font-size: 0.95rem; }
 }
