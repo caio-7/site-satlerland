@@ -43,7 +43,7 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 30px 20px;
 }
 
 /* Utilitários */
@@ -153,6 +153,7 @@ nav a:hover {
 .subtitulo-hero {
     font-size: 1.1rem;
     color: #555;
+    font-weight: bold;
 }
 
 .lista-vantagens {
@@ -163,6 +164,7 @@ nav a:hover {
 .lista-vantagens li {
     margin-bottom: 10px;
     font-weight: bold;
+    font-size: 25px;
 }
 
 /* Card Flutuante (Formulário) */
@@ -212,7 +214,18 @@ nav a:hover {
 .sobre-layout {
     align-items: center;
     text-align: left;
-    gap: 50px;
+    gap: 60px;
+}
+
+/* NOVO: Força o texto e a foto a dividirem a tela meio a meio */
+.sobre-texto {
+    flex: 1; 
+}
+
+.sobre-foto { 
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .sobre-texto h2 {
@@ -221,13 +234,15 @@ nav a:hover {
     font-size: 2rem;
 }
 
+/* NOVO: A mágica da foto grande, quadrada e com cantos arredondados */
 .foto-redonda-borda {
-    border-radius: 20px;
     width: 100%;
-    max-width: 400px;
-    box-shadow: 10px 10px 0px var(--cor-azul-escuro);
+    max-width: 450px; /* Deixa a foto bem imponente */
+    aspect-ratio: 1 / 1; /* Força a ser um quadrado perfeito */
+    object-fit: cover; /* Encaixa a foto no quadrado sem amassar o rosto */
+    border-radius: 25px; /* Cantos arredondados bonitos */
+    box-shadow: 15px 15px 0px var(--cor-azul-escuro); /* Sombra estilo offset */
     display: block;
-    margin: 0 auto;
 }
 
 /* =========================================
@@ -235,7 +250,7 @@ nav a:hover {
    ========================================= */
 .metodologia-layout {
     align-items: center;
-    gap: 50px;
+    gap: 100px;
     text-align: left;
 }
 
@@ -314,7 +329,7 @@ nav a:hover {
    ========================================= */
 .cards-grid {
     display: flex;
-    gap: 20px;
+    gap: 80px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -534,4 +549,34 @@ footer {
 
     /* Ajuste Tabela */
     .tabela-comparativa th, .tabela-comparativa td { padding: 15px 10px; font-size: 0.95rem; }
+}
+
+/* =========================================
+   BOTÕES WHATSAPP DO HERO (CARD INICIAL)
+   ========================================= */
+.botoes-whatsapp-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-hero-zap {
+    display: block;
+    background-color: var(--cor-fundo-principal); /* Usa o fundinho cinza claro */
+    color: var(--cor-azul-escuro);
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-zap:hover {
+    background-color: #25d366; /* Cor do WhatsApp */
+    color: var(--cor-branco);
+    border-color: #25d366;
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
 }
