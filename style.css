@@ -46,18 +46,21 @@ body {
     padding: 30px 20px;
 }
 
-/* Utilitários */
+/* Utilitários de Fundo e Espaçamento */
 .margin-top-20 { margin-top: 20px; }
 .margin-top-30 { margin-top: 30px; }
-.bg-white { background-color: var(--cor-fundo-principal); }
-.bg-azul-claro { background-color: var(--cor-azul-tabela); }
-.bg-suave { background-color: var(--cor-fundo-suave); }
+
+/* CORREÇÃO AQUI: Garante a cor branca real! */
+.bg-white { background-color: #ffffff !important; } 
+.bg-suave { background-color: var(--cor-fundo-suave) !important; } 
+.bg-azul-claro { background-color: var(--cor-azul-tabela) !important; }
+
 .titulo-metodologia { color: var(--cor-azul-escuro); }
 .titulo-centralizado { text-align: center; margin-bottom: 40px; color: var(--cor-azul-escuro); }
 
-/* Correção do Menu Cobrindo o Título */
+/* Correção da Altura do Menu - Reduzido de 100 para 70 */
 section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 70px;
 }
 
 /* =========================================
@@ -118,7 +121,7 @@ nav a:hover {
    HERO SECTION (INÍCIO)
    ========================================= */
 .hero-section {
-    padding-top: 120px; /* Espaço extra por causa do header fixo */
+    padding-top: 120px; 
     padding-bottom: 60px;
 }
 
@@ -175,7 +178,7 @@ nav a:hover {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     max-width: 450px;
-    margin-top: 0; /* Ajustado na refatoração */
+    margin-top: 0; 
 }
 
 .card-formulario h3 {
@@ -184,31 +187,13 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.card-formulario label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-    text-align: left;
-}
-
-.card-formulario input,
-.card-formulario select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
 /* =========================================
    SEÇÃO SOBRE
    ========================================= */
 .section-padrao {
     padding: 80px 0;
     text-align: center;
-    background-color: var(--cor-branco);
+    /* Fundo removido para aceitar as classes utilitárias (bg-white, bg-suave) */
 }
 
 .sobre-layout {
@@ -217,7 +202,6 @@ nav a:hover {
     gap: 60px;
 }
 
-/* NOVO: Força o texto e a foto a dividirem a tela meio a meio */
 .sobre-texto {
     flex: 1; 
 }
@@ -234,14 +218,13 @@ nav a:hover {
     font-size: 2rem;
 }
 
-/* NOVO: A mágica da foto grande, quadrada e com cantos arredondados */
 .foto-redonda-borda {
     width: 100%;
-    max-width: 450px; /* Deixa a foto bem imponente */
-    aspect-ratio: 1 / 1; /* Força a ser um quadrado perfeito */
-    object-fit: cover; /* Encaixa a foto no quadrado sem amassar o rosto */
-    border-radius: 25px; /* Cantos arredondados bonitos */
-    box-shadow: 15px 15px 0px var(--cor-azul-escuro); /* Sombra estilo offset */
+    max-width: 450px; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 25px; 
+    box-shadow: 15px 15px 0px var(--cor-azul-escuro); 
     display: block;
 }
 
@@ -352,9 +335,7 @@ nav a:hover {
    DEPOIMENTOS (SWIPER)
    ========================================= */
 #depoimentos {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
-    text-align: center;
+    /* Removido o background rígido daqui para a classe utilitária funcionar */
 }
 
 #depoimentos h2 { color: var(--cor-azul-escuro); margin-bottom: 40px; }
@@ -416,20 +397,89 @@ nav a:hover {
 .faq-item[open] summary::after { content: '-'; }
 .faq-item p { margin-top: 10px; color: #555; }
 
+
 /* =========================================
-   FORMULÁRIO DE CONTATO (FINAL)
+   CHAMADA FINAL (CONTATO WHATSAPP)
    ========================================= */
-.form-contato {
-    max-width: 500px;
-    margin: 30px auto 0;
-    text-align: left;
+.btn-whatsapp-grande {
+    background-color: #25d366; 
+    color: #ffffff;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 
-.form-contato label { margin-bottom: 5px; font-weight: bold; display: block; }
-.form-contato input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+/* =========================================
+   LAYOUT DA CHAMADA FINAL (FOTO + TEXTO)
+   ========================================= */
+.contato-layout {
+    align-items: center;
+    gap: 40px;
+}
+
+.contato-texto {
+    flex: 1;
+}
+
+.contato-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-aluna-cta {
+    max-width: 100%;
+    max-height: 400px; /* Evita que a foto fique absurdamente gigante no PC */
+    object-fit: contain;
+    
+     
+}
+
+/* Responsividade do bloco final */
+@media (max-width: 768px) {
+    .contato-layout {
+        flex-direction: column-reverse; /* No celular, a foto aparece por cima do botão */
+    }
+    .contato-texto {
+        text-align: center !important;
+    }
+    .img-aluna-cta {
+        max-height: 300px; /* Foto menor no celular */
+    }
+}
+
+
+.btn-whatsapp-grande:hover {
+    background-color: #20ba5a;
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+    color: #ffffff;
+}
+
+.whatsapp-icon-grande {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+@media (max-width: 768px) {
+    .btn-whatsapp-grande {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 15px 20px;
+    }
+}
 
 /* =========================================
-   BOTÕES GERAIS
+   BOTÕES GERAIS E WHATSAPP FLUTUANTE
    ========================================= */
 .btn-destaque {
     background-color: var(--cor-verde);
@@ -450,9 +500,6 @@ nav a:hover {
 .btn-vermelho { background-color: var(--cor-azul-escuro); }
 .btn-vermelho:hover { background-color: var(--cor-azul-primario); }
 
-/* =========================================
-   RODAPÉ E FLUTUANTES
-   ========================================= */
 footer {
     background-color: var(--cor-azul-escuro);
     color: var(--cor-branco);
@@ -482,6 +529,36 @@ footer {
 .whatsapp-icon { width: 35px; height: 35px; fill: white; }
 
 /* =========================================
+   BOTÕES WHATSAPP DO HERO (CARD INICIAL)
+   ========================================= */
+.botoes-whatsapp-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-hero-zap {
+    display: block;
+    background-color: var(--cor-fundo-principal); 
+    color: var(--cor-azul-escuro);
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-zap:hover {
+    background-color: #25d366; 
+    color: var(--cor-branco);
+    border-color: #25d366;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+/* =========================================
    RESPONSIVIDADE (MOBILE)
    ========================================= */
 .mobile-menu-icon {
@@ -500,12 +577,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Menu Mobile */
     .mobile-menu-icon { display: flex; z-index: 1001; }
     
     .nav-menu {
         position: fixed;
-        top: 80px; /* Ajuste conforme altura do header */
+        top: 80px; 
         right: -100%;
         background-color: #fff;
         width: 100%;
@@ -519,26 +595,24 @@ footer {
     .nav-menu.open { right: 0; }
     .nav-menu ul { flex-direction: column; gap: 20px; }
 
-    /* Ícone X */
     .mobile-menu-icon.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
     .mobile-menu-icon.open .bar:nth-child(2) { opacity: 0; }
     .mobile-menu-icon.open .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-    /* Ajustes de Layout */
     .flex-layout, .sobre-layout, .metodologia-layout {
         flex-direction: column;
     }
 
-    .sobre-layout { flex-direction: column-reverse; } /* Foto em cima no mobile */
+    .sobre-layout { flex-direction: column-reverse; } 
     
     .texto-lateral, .metodologia-texto, .sobre-texto {
         text-align: center;
     }
 
     .texto-lateral .lista-vantagens {
-        text-align: left;       /* O texto e ícones ficam alinhados à esquerda */
-        display: inline-block;  /* O bloco ocupa apenas o tamanho necessário */
-        margin: 0 auto;         /* Centraliza o bloco na tela */
+        text-align: left;       
+        display: inline-block;  
+        margin: 0 auto;         
     }
 
     .texto-lateral {
@@ -547,36 +621,5 @@ footer {
 
     .card-formulario { width: 100%; }
 
-    /* Ajuste Tabela */
     .tabela-comparativa th, .tabela-comparativa td { padding: 15px 10px; font-size: 0.95rem; }
-}
-
-/* =========================================
-   BOTÕES WHATSAPP DO HERO (CARD INICIAL)
-   ========================================= */
-.botoes-whatsapp-hero {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn-hero-zap {
-    display: block;
-    background-color: var(--cor-fundo-principal); /* Usa o fundinho cinza claro */
-    color: var(--cor-azul-escuro);
-    padding: 12px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: left;
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
-}
-
-.btn-hero-zap:hover {
-    background-color: #25d366; /* Cor do WhatsApp */
-    color: var(--cor-branco);
-    border-color: #25d366;
-    transform: translateY(-2px); /* Efeito de levantar */
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
 }
