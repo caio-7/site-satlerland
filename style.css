@@ -60,7 +60,7 @@ body {
 
 /* Correção da Altura do Menu - Reduzido de 100 para 70 */
 section {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 0px;
 }
 
 /* =========================================
@@ -191,7 +191,7 @@ nav a:hover {
    SEÇÃO SOBRE
    ========================================= */
 .section-padrao {
-    padding: 80px 0;
+    padding: 70px 0;
     text-align: center;
     /* Fundo removido para aceitar as classes utilitárias (bg-white, bg-suave) */
 }
@@ -334,9 +334,7 @@ nav a:hover {
 /* =========================================
    DEPOIMENTOS (SWIPER)
    ========================================= */
-#depoimentos {
-    /* Removido o background rígido daqui para a classe utilitária funcionar */
-}
+
 
 #depoimentos h2 { color: var(--cor-azul-escuro); margin-bottom: 40px; }
 
